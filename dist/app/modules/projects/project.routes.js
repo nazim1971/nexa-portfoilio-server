@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProjectRoutes = void 0;
+const express_1 = require("express");
+const validateRequest_1 = require("../../middlewire/validateRequest");
+const project_validation_1 = require("./project.validation");
+const project_controller_1 = require("./project.controller");
+const router = (0, express_1.Router)();
+router.post('/', (0, validateRequest_1.validateMiddlewire)(project_validation_1.projectValidations.projectValidationSchema), project_controller_1.ProjectController.createProject);
+router.get('/', project_controller_1.ProjectController.getAllProjects);
+router.get('/:id', project_controller_1.ProjectController.getSingleProject);
+router.patch('/:id', (0, validateRequest_1.validateMiddlewire)(project_validation_1.projectValidations.updateProjectValidationSchema), project_controller_1.ProjectController.updateProject);
+router.delete('/:id', project_controller_1.ProjectController.deleteProject);
+exports.ProjectRoutes = router;
