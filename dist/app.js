@@ -16,7 +16,9 @@ class Application {
     }
     middleware() {
         this.App.use(express_1.default.json());
-        this.App.use((0, cors_1.default)());
+        this.App.use((0, cors_1.default)({
+            origin: ["https://nexa-portfolio-murex.vercel.app"]
+        }));
     }
     routes() {
         //Application Routes
