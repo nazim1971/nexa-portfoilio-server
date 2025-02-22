@@ -14,7 +14,7 @@ const projectValidationSchema = zod_1.z.object({
 const updateProjectValidationSchema = zod_1.z.object({
     name: zod_1.z.string().min(1, 'Name is required!').optional(),
     title: zod_1.z.string().min(1, 'Title is required!').optional(),
-    image: zod_1.z.array(zod_1.z.string()).optional(),
+    image: zod_1.z.string().optional(),
     description: zod_1.z.string().min(1, 'Description is required!').optional(),
     liveLink: zod_1.z.string().optional(),
     serverLink: zod_1.z.string().optional(),

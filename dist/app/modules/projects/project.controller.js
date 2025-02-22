@@ -45,7 +45,6 @@ const getSingleProject = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(vo
     });
 }));
 const updateProject = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.body);
     const result = yield project_service_1.ProjectService.updateProject(req.params.id, req.body);
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
